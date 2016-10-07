@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+}
+<html>
+<body ng-app="PersonsApp">
+    <h1>People</h1>
+    <div ng-controller="boardController">
+        <ul>
+            <li ng-repeat="person in people">
+                <h2>{{person.firstName}} {{person.lastName}}</h2>
+            </li>
+        </ul>
+    </div>
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/js/angular-route.js"></script>
+    <script src="~/app/boardApp.js"></script>
+    <script src="~/app/boardFactory.js"></script>
+    <script src="~/app/boardController.js"></script>
+</body>
+</html>

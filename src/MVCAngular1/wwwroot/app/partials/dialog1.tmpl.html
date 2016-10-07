@@ -1,0 +1,95 @@
+﻿<md-dialog aria-label="{{currentPat.patient}}">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{currentPat.patient}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <!--<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>-->
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div>
+                {{currentPat.zimmernummer}}
+            </div>
+            <div >
+                {{currentPat.zimmer}}
+            </div>
+            <div >
+                {{currentPat.patient}}
+            </div>
+            <div >
+                {{currentPat.jahrgang}}
+            </div>
+            <div >
+                {{currentPat.vers}}
+            </div>
+            <div >
+                {{currentPat.fb}}
+            </div>
+            <div >
+                {{currentPat.rea}}
+            </div>
+            <div >
+                {{currentPat.iso}}
+            </div>
+            <div >
+                {{currentPat.cl}}
+            </div>
+            <div >
+                {{currentPat.ca}}
+            </div>
+            <div >
+                {{currentPat.mob}}
+            </div>
+            <div >
+                {{currentPat.hot}}
+            </div>
+            <div >
+                {{currentPat.kost}}
+            </div>
+            <div >
+                {{currentPat.eintritt}}
+            </div>
+            <div >
+                {{currentPat.austritt}}
+            </div>
+            <div >
+                {{currentPat.op}}
+            </div>
+            <div >
+                {{currentPat.termine}}
+            </div>
+            <div >
+                {{currentPat.bp}}
+            </div>
+            <div >
+                {{currentPat.fd}}
+            </div>
+            <div >
+                {{currentPat.sd}}
+            </div>
+            <div >
+                {{currentPat.ptergo}}
+            </div>
+            <div >
+                {{currentPat.nextpatient}}
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button href="http://www.usz.ch" target="_blank" md-autofocus>
+                More on USZ
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="answer('not useful')">
+                Not Useful
+            </md-button>
+            <md-button ng-click="answer('useful')">
+                Useful
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

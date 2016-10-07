@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "";
+}
+<html>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
+    @*<script src="~/js/angular-route.js"></script>
+        <script src="~/js/angular-material.js"></script>
+        <script src="~/js/ngDialog.js"></script>*@
+
+    <script src="~/app/boardApp.js"></script>
+    <script src="~/app/boardFactory.js"></script>
+    <script src="~/app/boardController.js"></script>
+
+</head>
+<body ng-app="BoardApp">
+
+    <div class="container">
+        <div class="headerrow">
+            <p style="float:left">Logo</p>
+            <p style="float:right">Montag 3.10.2016 09:41</p>
+        </div>
+        <div class="status"></div>
+        <div class="info"></div>
+        <div class="content" ng-controller="boardController">
+            <table>
+                <tr>
+                    <th>Zimmer</th>
+                    <th style="width:15px;"></th>
+                    <th>Patient/in</th>
+                    <th>Jg.</th>
+                    <th>Vers</th>
+                    <th>FB</th>
+                    <th>REA</th>
+                    <th>Iso</th>
+                    <th>CL</th>
+                    <th>CA</th>
+                    <th>Mob</th>
+                    <th>HOT</th>
+                    <th>Kost</th>
+                    <th>Eintritt</th>
+                    <th>Austritt</th>
+                    <th>OP</th>
+                    <th>Termin</th>
+                    <th>BP</th>
+                    <th>FD</th>
+                    <th>SD</th>
+                    <th>PT/Ergo</th>
+                    <th>nächster<br>Patient</th>
+                </tr>
+                <tr ng-repeat="dat in data">
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}" ng-if="dat.groupSize > 0" rowspan="{{dat.groupSize}}">
+                        {{dat.zimmernummer}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.zimmer}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        <div class="nonestyle" ng-click="showAdvanced($event, dat)">{{dat.patient}}</div>
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.jahrgang}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.vers}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.fb}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.rea}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.iso}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.cl}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.ca}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.mob}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.hot}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.kost}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.eintritt}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.austritt}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.op}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.termine}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.bp}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.fd}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.sd}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.ptergo}}
+                    </td>
+                    <td ng-class="{boldBorder: dat.groupSize > 0, normalBorder: dat.groupSize < 1}">
+                        {{dat.nextpatient}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/ng-template" id="templateId">
+        <h1>Template heading</h1>
+        <p>Content goes here</p>
+    </script>
+</body>
+</html>

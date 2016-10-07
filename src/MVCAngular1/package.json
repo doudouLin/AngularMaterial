@@ -1,0 +1,17 @@
+{
+  "name": "ASP.NET",
+  "version": "0.0.0",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.0",
+    "gulp-cssmin": "0.1.7",
+    "gulp-uglify": "2.0.0",
+    "rimraf": "2.5.4",
+    "signalr": "2.2.1"
+  },
+  "dependencies": {
+    "angular-route": "1.5.8",
+    "ng-dialog": "0.6.4",
+    "angular-material": "1.1.1"
+  }
+}
